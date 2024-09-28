@@ -13,6 +13,9 @@
   "[markdown]": {
     "editor.formatOnSave": false
   },
-  "eslint.format.enable": false,
-  "cSpell.ignoreRegExpList": ["outfile"],
+  "eslint.format.enable": true,
+  "cSpell.words": [
+    "outdir",
+    "outfile"
+  ],
 }

@@ -2,17 +2,18 @@
   "name": "exercise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "build": "node ./build.js",
     "watch": "node ./build.js --watch",
-    "compile": "tsc --noEmit"
+    "compile": "tsc --noEmit",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.11.1",
+    "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
     "@typescript-eslint/eslint-plugin": "^8.7.0",
     "@typescript-eslint/parser": "^8.7.0",
@@ -20,7 +21,10 @@
     "eslint": "^9.11.1",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.9.0",
+    "jest": "^29.7.0",
     "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5",
+    "ts-jest-resolver": "^2.0.1",
     "typescript": "^5.6.2",
     "typescript-eslint": "^8.7.0"
   }

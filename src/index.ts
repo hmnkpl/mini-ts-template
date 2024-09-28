@@ -1,3 +1,7 @@
-const input = 'Hello.';
+import { execute } from './lib/exercise.js';
 
-console.log(input);
+const input = 'input';
+
+const result = execute(input);
+
+console.log(result);

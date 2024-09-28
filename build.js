@@ -5,9 +5,10 @@ import * as readline from 'node:readline';
 const ctx = await esbuild.context({
   bundle: true,
   entryPoints: ['./src/index.ts'],
-  outfile: 'dist/index.js',
-  format: 'cjs',
+  outdir: 'dist',
+  format: 'esm',
   platform: 'node',
+  sourcemap: true,
   plugins: [
     {
       name: 'rebuild-notify',
