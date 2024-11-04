@@ -1,21 +1,36 @@
 {
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always",
+    "source.addMissingImports": "always",
+    "source.fixAll":"always",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "always"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
-  "[markdown]": {
-    "editor.formatOnSave": false
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
   },
-  "eslint.format.enable": true,
+  "eslint.format.enable": false,
+  "jest.runMode":"on-save",
+  "jest.shell": {
+  "path": "/usr/bin/env",
+  "args": ["zsh", "--login"]
+  },
   "cSpell.words": [
+    "espree",
     "outdir",
     "outfile"
-  ],
+  ]
 }

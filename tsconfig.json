@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2022",
+    "target": "esnext",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
@@ -8,5 +8,6 @@
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true
-  }
+  },
+  "include": ["./src/"]
 }
