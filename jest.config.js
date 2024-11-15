@@ -10,7 +10,7 @@ export default {
     '^.+\\.ts?$': [
       'ts-jest',
       {
-        tsConfig: 'tsconfig.json',
+        tsconfig: 'tsconfig.json',
         useESM: true,
       },
     ],

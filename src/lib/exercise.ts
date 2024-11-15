@@ -1,3 +1,1 @@
-export function execute(input: string): string {
-  return `execute: ${input}`;
-}
+export const execute: (input: string) => string = (input) => `execute: ${input}`;

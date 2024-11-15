@@ -1,6 +1,4 @@
 import * as esbuild from 'esbuild';
-import { stdin as input, stdout as output } from 'node:process';
-import * as readline from 'node:readline';
 
 const ctx = await esbuild.context({
   bundle: true,
@@ -37,7 +35,7 @@ if (watch) {
     console.error(err);
     process.exit(1);
   });
-  const rl = readline.createInterface({ input, output });
+  const rl = createInterface({ stdin, stdout });
   rl.question('exit?: \n', (answer) => {
     if (answer.toLowerCase() === 'exit') {
       console.log('stop watch process.');
