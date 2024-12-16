@@ -26,11 +26,6 @@
     "overrideConfigFile": "./eslint.config.js"
   },
   "eslint.useFlatConfig":true,
-  "jest.runMode":"on-save",
-  "jest.shell": {
-    "path": "/usr/bin/env",
-    "args": ["zsh", "--login"]
-  },
   "cSpell.words": [
     "espree",
     "outdir",

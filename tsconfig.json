@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "noImplicitAny": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["./src/"]
+  "include": ["./src/", "vitest.config.ts"]
 }

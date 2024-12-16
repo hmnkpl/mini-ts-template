@@ -1,8 +1,8 @@
 import eslintJs from '@eslint/js';
 import typescriptEslintParser from '@typescript-eslint/parser';
+import vitest from '@vitest/eslint-plugin';
 import eslintPrettier from 'eslint-config-prettier';
 import importPluginX from 'eslint-plugin-import-x';
-import jestPlugin from 'eslint-plugin-jest';
 import globals from 'globals';
 import eslintTs, { configs as eslintTsConfigs } from 'typescript-eslint';
 
@@ -37,9 +37,8 @@ export default eslintTs.config(
         node: true,
       },
     },
-    plugins: ['prefer-arrow-functions'],
     rules: {
-      'arrow-body-style': ['error', 'as-needed'],
+      'arrow-body-style': ['error', 'as-needed', { requireReturnForObjectLiteral: true }],
       'func-style': 'error',
       'import-x/newline-after-import': ['error', { considerComments: true }],
       'import-x/no-cycle': ['error'],
@@ -48,15 +47,6 @@ export default eslintTs.config(
       'import-x/no-useless-path-segments': ['error', { noUselessIndex: true }],
       'no-implicit-coercion': 'error',
       'no-unused-vars': 'off',
-      'prefer-arrow-functions/prefer-arrow-functions': [
-        'error',
-        {
-          classPropertiesAllowed: false,
-          disallowPrototype: false,
-          returnStyle: 'unchanged',
-          singleReturnOnly: false,
-        },
-      ],
       'prefer-template': 'error',
       '@typescript-eslint/consistent-type-exports': 'error',
       '@typescript-eslint/consistent-type-imports': [
@@ -90,24 +80,26 @@ export default eslintTs.config(
   },
   {
     files: ['**/*.spec.ts'],
-    plugins: { jest: jestPlugin },
+    plugins: { vitest },
     rules: {
-      'jest/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'test' }],
-      'jest/no-disabled-tests': 'warn',
-      'jest/no-focused-tests': 'error',
-      'jest/no-identical-title': 'error',
-      'jest/no-test-return-statement': 'error',
-      'jest/prefer-comparison-matcher': 'error',
-      'jest/prefer-equality-matcher': ['error'],
-      'jest/prefer-expect-assertions': 'off',
-      'jest/prefer-to-have-length': 'warn',
-      'jest/require-top-level-describe': ['error'],
-      'jest/valid-expect': 'error',
-    },
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
+      'vitest/consistent-test-it': ['error', { fn: 'test', withinDescribe: 'test' }],
+      'vitest/no-conditional-expect': 'error',
+      'vitest/no-conditional-in-test': 'error',
+      'vitest/no-conditional-tests': 'error',
+      'vitest/no-disabled-tests': 'warn',
+      'vitest/no-duplicate-hooks': 'error',
+      'vitest/no-focused-tests': ['error', { fixable: false }],
+      'vitest/no-identical-title': 'error',
+      'vitest/no-test-return-statement': 'error',
+      'vitest/prefer-mock-promise-shorthand': 'warn',
+      'vitest/prefer-comparison-matcher': 'error',
+      'vitest/prefer-equality-matcher': ['error'],
+      'vitest/prefer-expect-assertions': 'off',
+      'vitest/prefer-to-have-length': 'warn',
+      'vitest/require-hook': 'warn',
+      'vitest/require-to-throw-message': 'error',
+      'vitest/require-top-level-describe': ['error'],
+      'vitest/valid-expect': 'error',
     },
   },
 );
